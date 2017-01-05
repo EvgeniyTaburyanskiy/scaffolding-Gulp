@@ -9,10 +9,11 @@ global.$ = {
 	browserSync: require('browser-sync'),//.create(),
 	combiner   : require('stream-combiner2').obj, //-> запихивает несколько задач в один поток
 	through2   : require('through2').obj,  //-> Инструмент для создания плагиов под gulp
-	lpg         : require('gulp-load-plugins')({
+	lpg        : require('gulp-load-plugins')({
 		rename: {
-			'gulp-sass-glob' : 'sassGlob',
-			'gulp-if'        : 'If'
+			'gulp-sass-glob': 'sassGlob',
+			'gulp-if'       : 'If',
+			'gulp-tslint'   : 'tslint'
 		}
 	})
 };
@@ -31,7 +32,7 @@ $.gulp.task('default',
 						'css:sass',       //-> Собирает sass в css
 						'css:vendors',    //-> Собирает  все Вендорные CSS указанные
 						'js:vendors',     //-> Собирает  все Вендорные JS указанные
-						//'js:lint',      //-> Проверяет на ошибки JS
+						'ts:lint',      //-> Проверяет на ошибки TS
 						'ts:compile',     //-> Собирает все JS
 						'assets',         //-> Копирует все картинки из src/assets в build/assets
 						'pug'             //-> Обрабатывает PUG и делает из них HTML

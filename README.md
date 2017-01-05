@@ -23,15 +23,21 @@ gulp
    |-lib
    |---gulp
    |-----tasks
+   |---typings
    |-public
+   |---css
+   |-----maps
+   |---fonts
+   |---img
+   |-----favicon
+   |---js
+   |-----maps
    |-src
    |---assets
    |-----fonts
    |-----img
    |-------favicon
    |-------icons
-   |---js
-   |-----modules
    |---style
    |-----base
    |-----helpers
@@ -42,6 +48,10 @@ gulp
    |-----helpers
    |-----modules
    |-----pages
+   |---ts
+   |-----modules
+   |-tmp
+
 </pre>
 
 ### PKGs
