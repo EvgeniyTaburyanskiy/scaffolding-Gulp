@@ -1,0 +1,28 @@
+// Vars
+$base-font-size : 16px !default;
+$base-line-height : 1.25 * $base-font-size;
+$font-path : '../fonts/';
+
+// ====Responsive
+/* Media queries */
+
+$screen-mobile-min : 320px;
+$screen-mobile-max : 767px; //mobile
+
+$screen-tablet-min : $screen-mobile-max + 1;
+$screen-tablet-max : 1023px; //tablet
+
+$screen-laptop-min : $screen-tablet-max + 1;
+$screen-laptop-max : 1224px; //Desktops and laptops
+
+$screen-large-min : $screen-laptop-max + 1;
+$screen-large-max : 1824px; //large
+
+// media containers
+
+$container-large : 1200px;
+$container-laptop : 970px;
+$container-tablet : 750px;
+$container-mobile : auto;
+
+

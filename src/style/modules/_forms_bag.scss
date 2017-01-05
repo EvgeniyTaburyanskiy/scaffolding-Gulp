@@ -1,0 +1,183 @@
+$bag-form : (
+		form:(
+				mob-width:rem(320px),
+				tab-width:rem(640px),
+				lap-width:rem(750px),
+		),
+		item:(
+				bc:#ccc
+		)
+);
+
+.#{$moduleCssPrefix}shopping-bag {
+	margin    : 0 auto;
+	max-width : map-deep-get($bag-form, 'form', 'lap-width');
+
+	@include tablet {
+		max-width : map-deep-get($bag-form, 'form', 'tab-width');
+	}
+
+	@include mobile {
+		max-width : map-deep-get($bag-form, 'form', 'mob-width');
+	}
+
+	.prod {
+		&-list {
+			display         : flex;
+			margin          : 0;
+			margin-bottom   : rem(10px);
+			padding         : 0;
+			width           : 100%;
+			flex-wrap       : wrap;
+			justify-content : flex-start;
+			align-items     : center;
+
+			&__item {
+				display         : flex;
+				flex-direction  : row;
+				min-height      : rem(100px);
+				width           : 100%;
+				list-style      : none;
+				flex-grow       : 1;
+				flex-wrap       : nowrap;
+				justify-content : flex-start;
+				align-items     : center;
+			}
+		}
+
+		&-item {
+			position        : relative;
+			display         : flex;
+			margin          : 0;
+			padding         : 0;
+			width           : 100%;
+			border-bottom   : 1px solid map-deep-get($bag-form, 'item', 'bc');
+			flex-wrap       : nowrap;
+			justify-content : center;
+			align-items     : stretch;
+
+			@include mobile {
+				flex-wrap       : wrap;
+				justify-content : center;
+			}
+
+			&__actions {
+				display         : flex;
+				flex-direction  : column;
+				margin          : 0;
+				padding         : 0;
+				width           : rem(36px);
+				border-left     : 1px dashed map-deep-get($bag-form, 'item', 'bc');
+				text-align      : center;
+				flex-grow       : 0;
+				flex-shrink     : 0;
+				flex-wrap       : nowrap;
+				justify-content : center;
+				align-items     : center;
+
+				@include mobile {
+					flex-direction : row;
+					width          : 100%;
+					border         : none;
+					order: 2;
+				}
+			}
+
+			&__img {
+				display         : flex;
+				flex-direction  : column;
+				width           : rem(120px);
+				flex-wrap       : nowrap;
+				justify-content : center;
+				align-items     : center;
+				flex-grow       : 0;
+				flex-shrink     : 0;
+
+				@include mobile {
+					margin-bottom : rem(10px);
+					width         : 100%;
+					order         : 3;
+				}
+			}
+
+			&__desc {
+				padding     : 0 rem(10px);
+				align-self  : flex-start;
+				flex-grow   : 1;
+				flex-shrink : 0;
+
+				@include mobile {
+					margin-bottom : rem(10px);
+					width         : 100%;
+					order         : 1;
+				}
+			}
+
+			&__title {
+				@include font("M");
+				margin : 0;
+			}
+
+			&__label {
+				@include font("S");
+				margin : 0 rem(10px);
+			}
+
+			&__fin {
+				display         : flex;
+				flex-direction  : column;
+				margin          : 0;
+				padding         : 0 rem(10px);
+				width           : rem(120px);
+				text-align      : center;
+				flex-grow       : 0;
+				flex-shrink     : 0;
+				flex-wrap       : nowrap;
+				justify-content : center;
+				align-items     : center;
+
+				@include mobile {
+					width : 100%;
+					order : 4;
+				}
+			}
+		}
+	}
+
+	.fin {
+		&__summ,
+		&__price,
+		&__quantity {
+			width       : 100%;
+			flex-shrink : 0;
+			flex-grow   : 0;
+		}
+
+		&__summ {
+			@include font("N");
+			font-weight : bold;
+		}
+
+		&__price {
+			@include font("S")
+		}
+	}
+
+	.actions {
+
+		&__delete,
+		&__favorite {
+			@extend .#{$moduleCssPrefix}form-btn;
+			@include font('L');
+			width            : rem(36px);
+			height           : rem(36px);
+			margin-bottom    : rem(10px);
+			background-color : transparent;
+			border           : none;
+
+			@include mobile {
+				margin : 0 auto;
+			}
+		}
+	}
+}

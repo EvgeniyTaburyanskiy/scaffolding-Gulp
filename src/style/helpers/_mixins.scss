@@ -1,0 +1,207 @@
+@mixin mobile($orientation: false) {
+	$min : $screen-mobile-min;
+	$max : $screen-mobile-max;
+	//@include screen($min, $max, $orientation) {
+	//	@content;
+	//}
+	@include max-screen($max) {
+		@content;
+	}
+}
+
+@mixin tablet($orientation: false) {
+	$min : $screen-tablet-min;
+	$max : $screen-tablet-max;
+	/*	@include screen($min, $max, $orientation) {
+			@content;
+		}*/
+	@include max-screen($max) {
+		@content;
+	}
+}
+
+@mixin laptop($orientation: false) {
+	$min : $screen-laptop-min;
+	$max : $screen-laptop-max;
+	//@include screen($min, $max, $orientation) {
+	//	@content;
+	//}
+	@include max-screen($max) {
+		@content;
+	}
+}
+
+@mixin large($orientation: false) {
+	$min : $screen-large-min;
+	$max : $screen-large-max;
+	//@include screen($min, $max, $orientation) {
+	//	@content;
+	//}
+	@include max-screen($max) {
+		@content;
+	}
+}
+
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio : 2),
+	only screen and (min--moz-device-pixel-ratio : 2),
+	only screen and (-o-min-device-pixel-ratio : 2/1),
+	only screen and (min-device-pixel-ratio : 2),
+	only screen and (min-resolution : 192dpi),
+	only screen and (min-resolution : 2dppx) {
+		@content;
+	}
+}
+
+@mixin print {
+	@media print {
+		@content;
+	}
+}
+
+/*-----         -----------*/
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation : #{$str};
+	-moz-animation    : #{$str};
+	-ms-animation     : #{$str};
+	-o-animation      : #{$str};
+	animation         : #{$str};
+}
+
+@mixin centered {
+	position  : absolute;
+	top       : 50%;
+	left      : 50%;
+	transform : translate(-50%, -50%);
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow : inset $top $left $blur $color;
+		-moz-box-shadow    : inset $top $left $blur $color;
+		box-shadow         : inset $top $left $blur $color;
+	} @else {
+		-webkit-box-shadow : $top $left $blur $color;
+		-moz-box-shadow    : $top $left $blur $color;
+		box-shadow         : $top $left $blur $color;
+	}
+}
+
+@mixin rounded($radius: 0.5em) {
+	-webkit-border-radius : $radius;
+	-moz-border-radius    : $radius;
+	border-radius         : $radius;
+}
+
+@mixin btn {
+	// GENERAL
+	$btn-text-color : #fff;
+	$btn-text-color_hov : #ee8d00;
+	$btn-darken-percent : 15%;
+	$btn-lighten-percent : 20%;
+	$btn-height : rem(48px);
+	$btn-width : rem(48px);
+	$btn-border-radius : rem(0px);
+	$btn-padding : rem(5px);
+	$btn-margin : rem(5px);
+	$btn-font-size : $base-font-size;
+	$btn-shadow-color : #666;
+	$btn-font-weight : 300;
+	$btn-font-family : 'RobotoLight', Helvetica, Arial, sans-serif;
+	$btn-font-family : inherit;
+	$btn-bgc : transparent;
+	/*-----------------------------------------*/
+	position         : relative;
+	display          : flex;
+	flex-direction   : row;
+	flex-wrap        : nowrap;
+	justify-content  : center;
+	align-items      : center;
+	padding          : $btn-padding;
+	margin           : 0 auto;
+	height           : $btn-height;
+	width            : $btn-width;
+	border           : none;
+	outline          : none;
+	border-radius    : $btn-border-radius;
+	background-color : $btn-bgc;
+	cursor           : pointer;
+	transition       : all 0.2s ease;
+	@include font('N');
+	font-weight      : $btn-font-weight;
+	text-align       : center;
+	text-decoration  : none;
+	color            : $btn-text-color;
+
+
+	@include tablet {
+		flex-flow : row wrap;
+		padding   : $btn-padding*0.5;
+	}
+
+	&:disabled {
+		cursor : default;
+	}
+
+	&:active,
+	&.active,
+	&:hover,
+	&.hover {
+		border-color : $btn-text-color_hov;
+		color        : $btn-text-color_hov;
+	}
+
+	&:hover,
+	&.hover {
+	}
+
+	&:active,
+	&.active {
+	}
+
+	&__icon {
+		position        : relative;
+		width           : rem(36px);
+		height          : rem(36px);
+		cursor          : pointer;
+		flex            : 1 0 10%;
+		display         : flex;
+		justify-content : center;
+		align-items     : center;
+		font-size       : em($btn-font-size*2);
+
+		@include tablet {
+			flex : 1 0 100%;
+		}
+	}
+
+	&__text {
+		font-size  : em($btn-font-size);
+		outline    : none;
+		text-align : center;
+		cursor     : pointer;
+		flex       : 1 0 50%;
+
+		@include tablet {
+			flex : 1 0 100%;
+		}
+	}
+}

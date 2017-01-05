@@ -1,0 +1,102 @@
+
+/*================== PANEL =========================*/
+.#{$moduleCssPrefix}nav-panel {
+	position         : fixed;
+	top              : auto;
+	right            : 0;
+	bottom           : 0;
+	left             : 0;
+	display          : block;
+	min-height       : $panel-height;
+	background-color : $panel-bgc;
+	transition       : min-height .5s ease, width 1s ease;
+	z-index          : 15;
+
+	* { box-sizing : border-box; }
+
+	@include tablet {
+		min-height : 20vh;
+		transform  : translateY(100%);
+		transition : transform .5s ease;
+
+		&_active {
+			transform : translateY(0%);
+		}
+	}
+
+	&__handler {
+		position : absolute;
+		top      : rem(-48px);
+		left     : rem(0px);
+		display  : none;
+		overflow : hidden;
+		//margin-bottom : rem(10px);
+		width    : 100%;
+		height   : rem(48px);
+
+		@include tablet {
+			display : block;
+		}
+
+		.btn {
+			@include centered;
+		}
+	}
+
+	&__list {
+		display         : flex;
+		width           : 100%;
+		height          : 100%;
+		flex-flow       : row nowrap;
+		justify-content : center;
+		align-content   : stretch;
+		align-items     : stretch;
+		box-shadow      : 0px 1px 20px 0px #000;
+
+		@include tablet {
+			flex-flow : row wrap;
+		}
+	}
+
+	&__item {
+		position         : relative;
+		//overflow         : hidden;
+		display          : flex;
+		visibility       : visible;
+		padding          : 0;
+		background-color : $panel-bgc;
+		text-decoration  : none;
+		cursor           : pointer;
+		flex             : 0 0 $panel-btn-minsize-lap;
+		flex-flow        : row nowrap;
+		justify-content  : center;
+		align-items      : center;
+
+		&:not(:last-child):after {
+			height      : $panel-height * 0.8;
+			padding     : 0 rem(1px);
+			border-left : 2px solid lighten($panel-bgc, 10);
+			content     : "";
+		}
+
+		@include tablet {
+			padding : 0;
+			height  : $panel-btn-minsize-mob;
+			width   : 33%;
+			flex    : 1 0 33.333%;
+
+			&:not(:nth-child(3n)):after {
+				height      : $panel-btn-minsize-mob * 0.8;
+				border-left : 2px solid lighten($panel-bgc, 10);
+			}
+
+			&:nth-child(3n):after {
+				content : none;
+			}
+
+		}
+	}
+
+}
+
+@import "nav_btns";

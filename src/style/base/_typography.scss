@@ -1,0 +1,115 @@
+$font-path : "../fonts/" !default;
+$base-font-size : 1rem !default;
+$base-line-height : 1.25 * $base-font-size !default;
+
+@font-face {
+	font-family : "sansus_webissimoregular";
+	src         : url("#{$font-path}sansus-webissimo-regular-webfont.eot");
+	src         : url("#{$font-path}sansus-webissimo-regular-webfont.eot?#iefix") format("embedded-opentype"),
+	url("#{$font-path}sansus-webissimo-regular-webfont.woff2") format("woff2"),
+	url("#{$font-path}sansus-webissimo-regular-webfont.woff") format("woff"),
+	url("#{$font-path}sansus-webissimo-regular-webfont.ttf") format("truetype"),
+	url("#{$font-path}sansus-webissimo-regular-webfont.svg#sansus_webissimoregular") format("svg");
+	font-weight : normal;
+	font-style  : normal;
+
+}
+
+/* font-family: "RobotoRegular"; */
+@font-face {
+	font-family : "RobotoRegular";
+	src         : url("#{$font-path}RobotoRegular.eot");
+	src         : url("#{$font-path}RobotoRegular.eot?#iefix") format("embedded-opentype"),
+	url("#{$font-path}RobotoRegular.woff") format("woff"),
+	url("#{$font-path}RobotoRegular.ttf") format("truetype");
+	font-style  : normal;
+	font-weight : normal;
+}
+
+/* font-family: "RobotoLight"; */
+@font-face {
+	font-family : "RobotoLight";
+	src         : url("#{$font-path}RobotoLight.eot");
+	src         : url("#{$font-path}RobotoLight.eot?#iefix") format("embedded-opentype"),
+	url("#{$font-path}RobotoLight.woff") format("woff"),
+	url("#{$font-path}RobotoLight.ttf") format("truetype");
+	font-style  : normal;
+	font-weight : normal;
+}
+
+/* font-family: "RobotoMedium"; */
+@font-face {
+	font-family : "RobotoMedium";
+	src         : url("#{$font-path}RobotoMedium.eot");
+	src         : url("#{$font-path}RobotoMedium.eot?#iefix") format("embedded-opentype"),
+	url("#{$font-path}RobotoMedium.woff") format("woff"),
+	url("#{$font-path}RobotoMedium.ttf") format("truetype");
+	font-style  : normal;
+	font-weight : normal;
+}
+
+/* font-family: "RobotoBold"; */
+@font-face {
+	font-family : "RobotoBold";
+	src         : url("#{$font-path}RobotoBold.eot");
+	src         : url("#{$font-path}RobotoBold.eot?#iefix") format("embedded-opentype"),
+	url("#{$font-path}RobotoBold.woff") format("woff"),
+	url("#{$font-path}RobotoBold.ttf") format("truetype");
+	font-style  : normal;
+	font-weight : normal;
+}
+
+$fonts : (
+		primary: #{'RobotoLight', Helvetica, Arial, sans-serif},
+		secondary: #{Georgia, 'Times New Roman', sans-serif},
+		code: #{'source code pro', monospace}
+);
+
+/* ------------ TYPES  ------------ */
+$type-settings : (
+		"S": (
+				font-size: 0.75rem,
+				font-weight: normal,
+				line-height: $base-line-height
+		),
+		"N": (
+				font-size: 1rem,
+				font-weight: normal,
+				line-height: $base-line-height
+		),
+		"M": (
+				font-size: 1.333rem,
+				font-weight: normal,
+				line-height: $base-line-height * 2
+		),
+		"L": (
+				font-size: 1.778rem,
+				font-weight: normal,
+				line-height: $base-line-height * 2.18
+		),
+		"XL": (
+				font-size: 2.187rem,
+				font-weight: normal,
+				line-height: $base-line-height * 2.73
+		),
+		"XXL": (
+				font-size: 3.938rem,
+				font-weight: normal,
+				line-height: $base-line-height * 4.92
+		)
+);
+
+@function type-scale($level) {
+	@return map-get(map-get($type-settings, $level), "font-size");
+}
+
+@function line-height($level) {
+	@return map-get(map-get($type-settings, $level), "line-height");
+}
+
+// use example: @include font("XXL")
+@mixin font($level) {
+	font-family : map-get($fonts, 'primary');
+	font-size   : type-scale($level);
+	line-height : line-height($level);
+}
