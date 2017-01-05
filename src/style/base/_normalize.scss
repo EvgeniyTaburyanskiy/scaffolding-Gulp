@@ -7,10 +7,20 @@ html,
 body {
 	min-height : 100%;
 	font-size  : $base-font-size;
+	//@include tablet {
+	//  font-size : 16px;
+	//}
+	//@include mobile {
+	//  font-size : 14px;
+	//}
 }
 
 body {
 	font-family           : 'RobotoLight', Helvetica, Arial, sans-serif;
+	background-image      : url(../img/fon_page.jpg);
+	background-repeat     : no-repeat;
+	background-size       : cover;
+	background-attachment : fixed;
 }
 
 ul {

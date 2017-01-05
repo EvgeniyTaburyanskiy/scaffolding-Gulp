@@ -29,13 +29,11 @@ $.gulp.task('default',
 				'clean', // Очистка директории сборки
 				$.gulp.parallel(
 						'css:sass',       //-> Собирает sass в css
-						'css:vendors',    //-> Собирает  все Вендорные CSS указанные в  gulp/paths/css.foundation.js один foundation.css
-						'js:vendors',     //-> Собирает  все Вендорные JS указанные в  gulp/paths/foundation.js в один foundation.js
+						'css:vendors',    //-> Собирает  все Вендорные CSS указанные
+						'js:vendors',     //-> Собирает  все Вендорные JS указанные
 						//'js:lint',      //-> Проверяет на ошибки JS
-						//'js:process',   //-> Собирает все JS указанные в gulp/paths/app.js в один файл с картой app.js
-						'js:compile',
-						'assets:image',   //-> Копирует все картинки из source/images в build/assets/img
-						'assets:fonts',   //-> Копирует все шрифты из source/fonts в build/assets/fonts
+						'js:compile',     //-> Собирает все JS
+						'assets',         //-> Копирует все картинки из src/assets в build/assets
 						'pug'             //-> Обрабатывает PUG и делает из них HTML
 				),
 				$.gulp.parallel(
