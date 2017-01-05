@@ -1,5 +1,5 @@
 # gulp-scaffolding
-Scaffolding for Frontend Build
+Basic Scaffolding for Frontend Build
 
 ### Getting started:
 ```sh
