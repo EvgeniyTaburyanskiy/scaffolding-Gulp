@@ -1,5 +1,5 @@
 # gulp-scaffolding
-Basic Scaffolding for Frontend Build
+Basic scaffolding for frontend build with Type Script.
 
 ### Getting started:
 ```sh
@@ -14,7 +14,7 @@ gulp
 ### Tech Stack
 
 * SCSS
-* JS (ES6 + Babel + Browserify)
+* JS (TypeScript + Babel + Browserify)
 * PUG
 
 ### Scaffolding
