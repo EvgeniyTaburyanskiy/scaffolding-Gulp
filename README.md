@@ -5,10 +5,31 @@ Scaffolding for Frontend Build
 
 Технологический стек:
 * SCSS
+* JS (ES6 + Babel)
 * PUG
-* es6 + babel
 
 ### Scaffolding
+.
+   |-lib
+   |---gulp
+   |-----tasks
+   |-src
+   |---fonts
+   |---img
+   |-----favicon
+   |-----icons
+   |---js
+   |-----modules
+   |---style
+   |-----base
+   |-----helpers
+   |-----modules
+   |-----pages
+   |-----vendors
+   |---template
+   |-----helpers
+   |-----modules
+   |-----pages
 
 
 
@@ -16,7 +37,7 @@ Scaffolding for Frontend Build
 ```sh
 mkdir Proj
 cd ./Proj
-git clone https://github.com/EvgeniyTaburyanskiy/gulp-scaffolding.git .
+git clone https://github.com/EvgeniyTaburyanskiy/scaffolding-Gulp.git .
 
 npm install
 gulp
