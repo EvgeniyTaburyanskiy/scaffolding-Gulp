@@ -19,26 +19,29 @@ gulp
 
 ### Scaffolding
 <pre>
-   |-lib            |-> 
-   |---gulp         |-> 
-   |-----tasks      |-> 
-   |-src            |-> 
-   |---fonts        |-> 
-   |---img          |-> 
-   |-----favicon    |-> 
-   |-----icons      |-> 
-   |---js           |-> 
-   |-----modules    |-> 
-   |---style        |-> 
-   |-----base       |-> 
-   |-----helpers    |-> 
-   |-----modules    |-> 
-   |-----pages      |-> 
-   |-----vendors    |-> 
-   |---template     |-> 
-   |-----helpers    |-> 
-   |-----modules    |-> 
-   |-----pages      |-> 
+   .
+   |-lib
+   |---gulp
+   |-----tasks
+   |-public
+   |-src
+   |---assets
+   |-----fonts
+   |-----img
+   |-------favicon
+   |-------icons
+   |---js
+   |-----modules
+   |---style
+   |-----base
+   |-----helpers
+   |-----modules
+   |-----pages
+   |-----vendors
+   |---template
+   |-----helpers
+   |-----modules
+   |-----pages
 </pre>
 
 ### PKGs
