@@ -32,7 +32,7 @@ $.gulp.task('default',
 						'css:vendors',    //-> Собирает  все Вендорные CSS указанные
 						'js:vendors',     //-> Собирает  все Вендорные JS указанные
 						//'js:lint',      //-> Проверяет на ошибки JS
-						'js:compile',     //-> Собирает все JS
+						'ts:compile',     //-> Собирает все JS
 						'assets',         //-> Копирует все картинки из src/assets в build/assets
 						'pug'             //-> Обрабатывает PUG и делает из них HTML
 				),
