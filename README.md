@@ -14,7 +14,7 @@ gulp
 ### Tech Stack
 
 * SCSS
-* JS (ES6 + Babel)
+* JS (ES6 + Babel + Browserify)
 * PUG
 
 ### Scaffolding

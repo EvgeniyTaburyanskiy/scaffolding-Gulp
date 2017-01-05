@@ -33,11 +33,8 @@ Thumbs.db
 bower_components
 dist
 build
-server\public\uploads
+public
+tmp
 
 # Node.JS
 node_modules
-npm-debug.log
-
-public
-tmp

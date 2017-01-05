@@ -7,12 +7,6 @@ html,
 body {
 	min-height : 100%;
 	font-size  : $base-font-size;
-	//@include tablet {
-	//  font-size : 16px;
-	//}
-	//@include mobile {
-	//  font-size : 14px;
-	//}
 }
 
 body {
@@ -47,8 +41,6 @@ ul {
 	outline       : 1px dashed red;
 	margin        : 0 auto;
 	width         : $container-large;
-	margin-bottom : rem(90px);
-	margin-top    : rem(30px);
 
 	@include laptop {
 		width : $container-laptop;
